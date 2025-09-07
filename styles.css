@@ -1,49 +1,220 @@
-:root { --bg:#0b1020; --ink:#0f172a; --ink-2:#334155; --brand:#3b82f6; --card:#ffffff; }
-* { box-sizing: border-box; }
-body { margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:#0b1220; }
-.container { max-width:1100px; margin:0 auto; padding:0 20px; }
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MGT — Amorphous Powder Solutions</title>
+  <meta name="description" content="MGT: 철계 비정질 분말/코팅/EMI 솔루션. 조선·플랜트·전자 산업의 수명과 신뢰성을 향상합니다.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="canonical" href="https://mgt-p.com/">
+  <meta property="og:title" content="MGT — Amorphous Powder Solutions">
+  <meta property="og:description" content="내식·내마모·EMI 흡수/차폐 솔루션">
+  <meta property="og:image" content="https://mgt-p.com/og-image.png">
+  <meta property="og:type" content="website">
+</head>
+<body>
+  <!-- 헤더 -->
+  <header class="container header">
+    <a class="logo" href="/">MGT</a>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#performance">Performance</a>
+      <a href="#cases">Cases</a>
+      <a href="#" id="open-contact" class="btn">문의</a>
+    </nav>
+  </header>
 
-/* Header */
-.header { display:flex; align-items:center; justify-content:space-between; padding:16px 0; position:sticky; top:0; background:#fff; border-bottom:1px solid #eef2f7; z-index:10;}
-.logo { font-weight:800; letter-spacing:.5px; text-decoration:none; color:#0b1220; font-size:20px; }
-.nav a { margin-left:16px; text-decoration:none; color:#0b1220; }
-.nav .btn { margin-left:16px; }
+  <!-- 히어로 -->
+  <section class="hero">
+    <div class="container">
+      <div class="chips">
+        <span class="chip">Corrosion</span>
+        <span class="chip">Wear</span>
+        <span class="chip">EMI</span>
+        <span class="chip">Eco</span>
+      </div>
+      <h1>Advanced Amorphous Powder Solutions</h1>
+      <p>철계 비정질 분말을 통해 용사·도료·EMI·조선/플랜트 산업에서 새로운 수명주기 성능을 제안합니다.</p>
+      <div class="cta">
+        <a class="btn primary" href="#" id="open-contact-hero">견적/기술 상담</a>
+        <a class="btn ghost" href="#products">제품 살펴보기</a>
+      </div>
+    </div>
+  </section>
 
-/* Buttons */
-.btn { display:inline-block; padding:10px 14px; border-radius:10px; border:1px solid #dbe1ea; text-decoration:none; }
-.btn.primary { background:var(--brand); color:#fff; border-color:var(--brand); }
-.btn.ghost { background:#fff; color:#0b1220; }
+  <!-- About -->
+  <section id="about" class="section alt">
+    <div class="container">
+      <h2>About MGT</h2>
+      <p class="lead">혁신적 소재로 산업 수명을 두 배로.</p>
+      <p class="muted">MGT는 독자적 합금 설계와 가스 아토마이징 분말 제조 기술을 기반으로, 내식·내마모·EMI 솔루션을 제공합니다. 조성은 비공개 정책을 준수합니다.</p>
 
-/* Hero */
-.hero { background:linear-gradient(180deg,#f7fbff,#ffffff); padding:80px 0; border-bottom:1px solid #eef2f7; }
-.hero h1 { font-size:42px; margin:0 0 10px; }
-.hero p { color:#475569; max-width:700px; }
-.cta { margin-top:20px; display:flex; gap:12px; flex-wrap:wrap; }
+      <div class="cards">
+        <article class="card">
+          <h3 class="card-title">Mission</h3>
+          <p>산업 설비의 기대수명과 신뢰성을 향상시키는 비정질 분말 솔루션 제공.</p>
+        </article>
+        <article class="card">
+          <h3 class="card-title">Differentiation</h3>
+          <p>비정질 미세조직 기반의 내식/내마모/EMI 동시 최적화, 기존 WC-Co·CrC·Ferrite 대비 LCC 절감.</p>
+        </article>
+        <article class="card">
+          <h3 class="card-title">Industries</h3>
+          <p>용사/도료, 조선·플랜트, 전자파 흡수/차폐, 발전·화학 프로세스.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-/* Sections */
-.section { padding:64px 0; }
-.section.alt { background:#f8fafc; }
-.section h2 { margin:0 0 16px; font-size:28px; }
+  <!-- Products -->
+  <section id="products" class="section">
+    <div class="container">
+      <h2>Products</h2>
+      <p class="muted">Series & Variants</p>
 
-/* Cards */
-.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:12px; }
-.card { background:#fff; border:1px solid #e6ebf2; border-radius:14px; padding:18px; }
+      <div class="cards">
+        <article class="card"><h3 class="card-title">MGT#402</h3><p>EMI Absorption (광대역 RL 타깃, 8/14 GHz 피크)</p></article>
+        <article class="card"><h3 class="card-title">MGT#502</h3><p>Corrosion Resistance (고염소 환경 특화)</p></article>
+        <article class="card"><h3 class="card-title">MGT#602</h3><p>Wear + Corrosion (유지보수 주기 연장)</p></article>
+        <article class="card"><h3 class="card-title">AST#1-MR</h3><p>Economic Solution (대량 보수/프라이머 대체)</p></article>
+      </div>
 
-/* Lists */
-.bullets { display:grid; gap:8px; padding-left:18px; }
+      <ul class="bullets mt">
+        <li><strong>MGT#402</strong> — Ferrite/Carbon 대체 지향, EMI 코팅/잉크</li>
+        <li><strong>MGT#502</strong> — 해양·보일러·플랜트 프라이머 적용</li>
+        <li><strong>MGT#602</strong> — WC-Co/CrC 대비 LCC 절감</li>
+        <li><strong>AST#1-MR</strong> — 비용 최적형</li>
+      </ul>
+    </div>
+  </section>
 
-/* Footer */
-.footer { background:#0b1220; color:#cbd5e1; padding:20px 0; margin-top:40px; }
+  <!-- Performance (간이 카드로 요약) -->
+  <section id="performance" class="section alt">
+    <div class="container">
+      <h2>Performance Snapshot</h2>
+      <p class="muted">단순화된 요약 (정량 데이터는 요청 시 제공)</p>
 
-/* Small text */
-.small { color:#64748b; font-size:12px; }
+      <div class="cards">
+        <article class="card">
+          <h3 class="card-title">Corrosion (B117)</h3>
+          <p class="small">1000 h 염수분무 (개념치): <b>MGT#502 = 0.8 mpy</b>, NiCrBSi = 1.2, Inconel = 1.1 → NiCrBSi 대비 약 33%↓, Inconel 대비 약 27%↓</p>
+          <div class="bar"><span style="width:40%"></span><em>MGT#502</em></div>
+          <div class="bar bar-ghost"><span style="width:60%"></span><em>NiCrBSi</em></div>
+          <div class="bar bar-ghost"><span style="width:55%"></span><em>Inconel</em></div>
+        </article>
 
-/* Responsive */
-@media (max-width:640px){ .hero h1{font-size:32px;} }
+        <article class="card">
+          <h3 class="card-title">Wear (G65)</h3>
+          <p class="small">절삭마모(Proc. A, 개념치): <b>MGT#602 = 60 mm³</b>, WC-Co = 80, CrC-NiCr = 75 → WC-Co 대비 25%↓</p>
+          <div class="bar"><span style="width:45%"></span><em>MGT#602</em></div>
+          <div class="bar bar-ghost"><span style="width:60%"></span><em>WC-Co</em></div>
+          <div class="bar bar-ghost"><span style="width:56%"></span><em>CrC-NiCr</em></div>
+        </article>
 
-/* ---- Contact Modal ---- */
-.modal { border:none; border-radius:16px; padding:24px; max-width:520px; width:90%; }
-.modal::backdrop { background: rgba(0,0,0,.45); }
-.modal form p { margin: 0 0 12px; }
-.modal input, .modal textarea { width:100%; padding:10px; border:1px solid #dbe1ea; border-radius:10px; }
-.modal-actions { display:flex; gap:8px; justify-content:flex-end; margin-top:8px; }
+        <article class="card">
+          <h3 class="card-title">EMI (RL)</h3>
+          <p class="small">2–18 GHz (개념치): <b>MGT#402 최소 RL ≈ −30 dB @10 GHz</b>, 8/14 GHz 부근 피크 설계</p>
+          <ul class="ticks small">
+            <li>10 GHz: −30 dB</li>
+            <li>14 GHz: −28 dB</li>
+            <li>8 GHz:  피크 설계</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Positioning -->
+  <section id="positioning" class="section">
+    <div class="container">
+      <h2>Market Positioning</h2>
+      <p class="muted">가격 vs 성능 포지셔닝 (개념도)</p>
+
+      <ul class="bullets">
+        <li>WC-Co/CrC 대체 지향</li>
+        <li>Zn-rich Primer / Ferrite 대체 지향</li>
+        <li>LCC 20–40% 절감 목표</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Cases -->
+  <section id="cases" class="section alt">
+    <div class="container">
+      <h2>Case Studies</h2>
+      <p class="muted">해양·플랜트·EMI 적용 사례 (개념)</p>
+
+      <div class="cards">
+        <article class="card">
+          <h3 class="card-title">Marine</h3>
+          <p class="small">B117 1000 h 기준, 부식율 약 60% 감소 (Before→After)</p>
+          <div class="bar"><span style="width:60%"></span><em>Before</em></div>
+          <div class="bar bar-ghost"><span style="width:24%"></span><em>After</em></div>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Plant</h3>
+          <p class="small">G65 기준, 마모량 약 50% 감소 → 유지보수 주기 연장</p>
+          <div class="bar"><span style="width:100%"></span><em>Before</em></div>
+          <div class="bar bar-ghost"><span style="width:50%"></span><em>After</em></div>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">EMI</h3>
+          <p class="small">10–14 GHz 구간에서 RL 개선 폭 ≥ 20 dB</p>
+          <ul class="ticks small">
+            <li>10 GHz: −5 → −30 dB</li>
+            <li>14 GHz: −6 → −28 dB</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> MGT — mgt-p.com · All rights reserved.
+    </div>
+  </footer>
+
+  <!-- 문의 모달( Netlify Forms ) -->
+  <dialog id="contact-modal" class="modal">
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+      <input type="hidden" name="form-name" value="contact" />
+      <p style="display:none"><label>Don’t fill this out: <input name="bot-field"></label></p>
+
+      <h2 class="mb-2">문의</h2>
+      <p><label>이름<br><input name="name" required></label></p>
+      <p><label>이메일<br><input type="email" name="email" required></label></p>
+      <p><label>메시지<br><textarea name="message" rows="5" required></textarea></label></p>
+
+      <div class="modal-actions">
+        <button type="submit" class="btn primary">보내기</button>
+        <button type="button" id="close-contact" class="btn">닫기</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script>
+    // 현재 연도
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // 모달 열기/닫기
+    const modal   = document.getElementById('contact-modal');
+    const open1   = document.getElementById('open-contact');
+    const open2   = document.getElementById('open-contact-hero');
+    const closeBt = document.getElementById('close-contact');
+
+    function openModal(e){ e && e.preventDefault(); modal.showModal(); }
+    function closeModal(){ modal.close(); }
+
+    open1 && open1.addEventListener('click', openModal);
+    open2 && open2.addEventListener('click', openModal);
+    closeBt && closeBt.addEventListener('click', closeModal);
+  </script>
+</body>
+</html>
+
