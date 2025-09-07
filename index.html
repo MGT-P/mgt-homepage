@@ -7,33 +7,39 @@
   <meta name="description" content="MGTechnology (MGT): 철계 비정질 합금 분말, 코팅, EMI 차폐 솔루션. 고성능 소재로 산업 현장의 과제를 해결합니다.">
   <link rel="icon" href="/favicon.ico">
   <link rel="stylesheet" href="/styles.css" />
+  <link rel="canonical" href="https://mgt-p.com/">
+  <!-- Open Graph -->
   <meta property="og:title" content="MGTechnology (MGT)" />
   <meta property="og:description" content="철계 비정질 합금 분말 · 코팅 · EMI 차폐 솔루션" />
   <meta property="og:image" content="https://mgt-p.com/og-image.png" />
   <meta property="og:type" content="website" />
 </head>
 <body>
+  <!-- Header -->
   <header class="container header">
     <a class="logo" href="/">MGT</a>
     <nav class="nav">
       <a href="#products">제품</a>
       <a href="#applications">적용 분야</a>
       <a href="#about">회사소개</a>
-     <a href="#" id="open-contact" class="btn">문의</a>
+      <!-- 문의 버튼은 모달을 연다 -->
+      <a href="#" id="open-contact" class="btn">문의</a>
     </nav>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
     <div class="container">
       <h1>Amorphous Alloy Powders & Coatings</h1>
       <p>철계 비정질 합금 기반의 고성능 분말/코팅 소재로 산업 현장의 성능과 안정성을 높입니다.</p>
       <div class="cta">
-        <a class="btn primary" href="#contact">견적/기술 상담</a>
+        <a class="btn primary" href="#" id="open-contact-hero">견적/기술 상담</a>
         <a class="btn ghost" href="#products">제품 살펴보기</a>
       </div>
     </div>
   </section>
 
+  <!-- Products -->
   <section id="products" class="section container">
     <h2>제품</h2>
     <div class="cards">
@@ -52,6 +58,7 @@
     </div>
   </section>
 
+  <!-- Applications -->
   <section id="applications" class="section alt">
     <div class="container">
       <h2>적용 분야</h2>
@@ -63,30 +70,52 @@
     </div>
   </section>
 
+  <!-- About -->
   <section id="about" class="section container">
     <h2>회사소개</h2>
     <p>MGTechnology(MGT)는 비정질 합금 기반의 분말/코팅/차폐 솔루션을 연구·제조하는 소재 기업입니다. 고객 맞춤형 성능 설계와 신뢰성 검증을 통해 실제 생산현장에서 효과를 내는 것을 최우선으로 합니다.</p>
   </section>
 
-<section id="contact" class="section container">
-  <h2>문의</h2>
-  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
-    <input type="hidden" name="form-name" value="contact" />
-    <p style="display:none"><label>Don’t fill this out: <input name="bot-field"></label></p>
-    <p><label>이름<br><input name="name" required></label></p>
-    <p><label>이메일<br><input type="email" name="email" required></label></p>
-    <p><label>메시지<br><textarea name="message" rows="5" required></textarea></label></p>
-    <p><button type="submit" class="btn primary">보내기</button></p>
-  </form>
-  <p class="small">제출 내용은 Netlify 대시보드의 <b>Forms</b>에서 확인할 수 있습니다.</p>
-</section>
-
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <span>© <span id="year"></span> MGTechnology. All rights reserved.</span>
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <!-- Contact Modal (Netlify Forms) -->
+  <dialog id="contact-modal" class="modal">
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+      <input type="hidden" name="form-name" value="contact" />
+      <p style="display:none"><label>Don’t fill this out: <input name="bot-field"></label></p>
+
+      <h2 style="margin:0 0 12px">문의</h2>
+      <p><label>이름<br><input name="name" required></label></p>
+      <p><label>이메일<br><input type="email" name="email" required></label></p>
+      <p><label>메시지<br><textarea name="message" rows="5" required></textarea></label></p>
+
+      <div class="modal-actions">
+        <button type="submit" class="btn primary">보내기</button>
+        <button type="button" id="close-contact" class="btn">닫기</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Scripts -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const modal   = document.getElementById('contact-modal');
+    const open1   = document.getElementById('open-contact');
+    const open2   = document.getElementById('open-contact-hero');
+    const closeBt = document.getElementById('close-contact');
+
+    function openModal(e){ e && e.preventDefault(); modal.showModal(); }
+    function closeModal(){ modal.close(); }
+
+    open1 && open1.addEventListener('click', openModal);
+    open2 && open2.addEventListener('click', openModal);
+    closeBt && closeBt.addEventListener('click', closeModal);
+  </script>
 </body>
 </html>
