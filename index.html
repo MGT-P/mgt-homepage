@@ -254,28 +254,36 @@
     <!-- 폼은 ‘문의’ 클릭(#contact) 시에만 보이도록 -->
     <div class="card contact-form">
       <h3 class="card__title">문의</h3>
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
-        <input type="hidden" name="form-name" value="contact" />
-        <p class="hidden"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+      <form name="contact"
+      method="POST"
+      netlify
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      action="/thanks.html">
+  <input type="hidden" name="form-name" value="contact" />
+  <p class="hidden">
+    <label>Don’t fill this out: <input name="bot-field" /></label>
+  </p>
 
-        <label class="field">
-          <span>이름</span>
-          <input type="text" name="name" required />
-        </label>
+  <!-- 여기부터 실제 입력 필드들 -->
+  <label class="field">
+    <span>이름</span>
+    <input type="text" name="name" required />
+  </label>
 
-        <label class="field">
-          <span>이메일</span>
-          <input type="email" name="email" required />
-        </label>
+  <label class="field">
+    <span>이메일</span>
+    <input type="email" name="email" required />
+  </label>
 
-        <label class="field">
-          <span>메시지</span>
-          <textarea name="message" rows="5" required></textarea>
-        </label>
+  <label class="field">
+    <span>메시지</span>
+    <textarea name="message" rows="5" required></textarea>
+  </label>
 
-        <button type="submit" class="btn btn--primary"><svg class="i"><use href="#i-mail" /></svg> 보내기</button>
-        <p class="tiny">제출 내용은 Netlify 대시보드의 <b>Forms</b>에서 확인할 수 있습니다.</p>
-      </form>
+  <button type="submit" class="btn btn-primary">보내기</button>
+  <p class="tiny">제출 내용은 Netlify 대시보드의 <b>Forms</b>에서 확인할 수 있습니다.</p>
+</form>
     </div>
   </div>
 </section>
