@@ -1,266 +1,503 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MGT — Advanced Amorphous Powder Solutions</title>
-  <meta name="description" content="MGT 비정질 합금 분말 — 내식·내마모·EMI 솔루션. 용사/도료/조선·플랜트/전자파 흡수 적용." />
-  <meta property="og:title" content="MGT — Advanced Amorphous Powder Solutions" />
-  <meta property="og:description" content="내식·내마모·EMI 솔루션. 용사/도료/조선·플랜트/전자파 흡수 적용." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mgt-p.com" />
-  <meta name="theme-color" content="#1E3A8A" />
-  <style>
-    :root{--navy:#1E3A8A;--ink:#0f172a;--muted:#6b7280;--bg:#ffffff;--bg-alt:#f1f5f9}
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";color:var(--ink);background:linear-gradient(#f8fafc,#fff)}
-    .container{max-width:1120px;margin:0 auto;padding:0 20px}
-    header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid #e5e7eb}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
-    .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#111827,#1E3A8A)}
-    .menu a{margin-left:18px;text-decoration:none;color:#334155;font-weight:600}
-    .menu a:hover{color:var(--navy)}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:1px solid #cbd5e1;text-decoration:none;color:#0f172a;background:#fff}
-    .btn.primary{background:var(--navy);border-color:var(--navy);color:#fff}
-    section{padding:72px 0}
-    .section-head h2{margin:0;font-size:28px}
-    .section-head p{margin:10px 0 0;color:var(--muted)}
-    .divider{width:96px;height:3px;background:var(--navy);border-radius:2px;margin:16px 0 0}
-    .grid{display:grid;gap:20px}
-    .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
-    @media(max-width:900px){.grid.two,.grid.three{grid-template-columns:1fr}}
-    .card{border:1px solid #e5e7eb;border-radius:14px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.04)}
-    .card .head{padding:16px 18px;border-bottom:1px solid #e5e7eb;font-weight:800}
-    .card .body{padding:16px 18px;color:#334155}
-    .hero{background:linear-gradient(135deg,rgba(30,58,138,.12),rgba(2,132,199,.06))}
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
-    .chip{display:flex;align-items:center;gap:6px;background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:6px 10px;color:#0f172a}
-    .muted{color:var(--muted)}
-    footer{border-top:1px solid #e5e7eb;padding:40px 0;text-align:center;color:#64748b}
-    /* Simple SVG helpers */
-    .chart{width:100%;height:220px}
-    .legend{font-size:12px;color:#475569;display:flex;gap:12px;margin-top:8px}
-    .legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MGT - Advanced Amorphous Powder Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+        .hero-bg { background: linear-gradient(135deg, #e2e8f0 0%, #f1f5f9 100%); }
+        .scroll-smooth { scroll-behavior: smooth; }
+        .chart-container { position: relative; height: 300px; }
+    </style>
 </head>
-<body>
-  <header>
-    <div class="container nav">
-      <div class="brand"><div class="logo"></div> MGT <span class="muted" style="font-weight:600">· mgt-p.com</span></div>
-      <nav class="menu" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#products">Products</a>
-        <a href="#performance">Performance</a>
-        <a href="#cases">Cases</a>
-        <a class="btn" href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <div class="chips">
-        <span class="chip">Corrosion</span>
-        <span class="chip">Wear</span>
-        <span class="chip">EMI</span>
-        <span class="chip">Eco</span>
-      </div>
-      <h1 style="font-size:46px;line-height:1.1;margin:0 0 10px;font-weight:900">Advanced Amorphous Powder Solutions</h1>
-      <p class="muted" style="font-size:18px;max-width:760px">철계 비정질 분말을 통해 용사·도료·EMI·조선/플랜트 산업에서 새로운 수명주기 성능을 제안합니다.</p>
-      <div style="margin-top:18px"><a class="btn primary" href="#contact">문의하기</a></div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container">
-      <div class="section-head">
-        <h2>About MGT</h2>
-        <p>혁신적 소재로 산업 수명을 두 배로.</p>
-        <div class="divider"></div>
-      </div>
-      <p class="muted" style="max-width:800px">MGT는 독자적 합금 설계와 가스 아토마이징 분말 제조 기술을 기반으로, 내식·내마모·EMI 솔루션을 제공합니다. 조성은 비공개 정책을 준수합니다.</p>
-      <div class="grid three" style="margin-top:18px">
-        <div class="card"><div class="head">Mission</div><div class="body">산업 설비의 기대수명과 신뢰성을 향상시키는 비정질 분말 솔루션 제공.</div></div>
-        <div class="card"><div class="head">Differentiation</div><div class="body">비정질 미세조직 기반 내식/내마모/EMI 동시 최적화, WC-Co·CrC·Ferrite 대비 LCC 절감.</div></div>
-        <div class="card"><div class="head">Industries</div><div class="body">용사/도료, 조선·플랜트, 전자파 흡수/차폐, 발전·화학 프로세스.</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUCTS -->
-  <section id="products" style="background:var(--bg-alt)">
-    <div class="container">
-      <div class="section-head">
-        <h2>Products</h2>
-        <p>Series & Variants</p>
-        <div class="divider"></div>
-      </div>
-      <div class="grid two">
-        <div class="card"><div class="head">MGT#402</div><div class="body">EMI Absorption</div></div>
-        <div class="card"><div class="head">MGT#502</div><div class="body">Corrosion Resistance</div></div>
-        <div class="card"><div class="head">MGT#602</div><div class="body">Wear + Corrosion</div></div>
-        <div class="card"><div class="head">AST#1-MR</div><div class="body">Economic Solution</div></div>
-      </div>
-      <ul class="muted" style="margin:14px 0 0;line-height:1.8">
-        <li><b>MGT#402</b> — 광대역 RL 타깃(8/14 GHz 피크), Ferrite/Carbon 대체 지향, EMI 코팅/잉크.</li>
-        <li><b>MGT#502</b> — 고염소(Cl⁻) 환경 내식 특화, 해양·보일러·플랜트 프라이머 적용.</li>
-        <li><b>MGT#602</b> — 마모+부식 동시 대응, WC-Co/CrC 대비 유지보수 주기 연장.</li>
-        <li><b>AST#1-MR</b> — 비용 최적형, 부품 대량 보수·프라이머 대체 용도.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- PERFORMANCE (inline SVG charts) -->
-  <section id="performance">
-    <div class="container">
-      <div class="section-head">
-        <h2>Performance Snapshot</h2>
-        <p>단순화된 시각 자료 (정량 데이터는 요청 시 제공)</p>
-        <div class="divider"></div>
-      </div>
-      <div class="grid three">
-        <!-- Corrosion bar -->
-        <div class="card">
-          <div class="head">Corrosion (B117)</div>
-          <div class="body">
-            <svg viewBox="0 0 360 180" class="chart" role="img" aria-label="Corrosion rate bars">
-              <rect x="40" y="20" width="1" height="140" fill="#e5e7eb"/>
-              <text x="10" y="18" font-size="12" fill="#475569">mpy</text>
-              <!-- bars -->
-              <rect x="90" y="60" width="40" height="100" fill="#1E3A8A"/>
-              <rect x="170" y="40" width="40" height="120" fill="#94a3b8"/>
-              <rect x="250" y="46" width="40" height="114" fill="#cbd5e1"/>
-              <!-- labels -->
-              <text x="90" y="172" font-size="12">MGT#502</text>
-              <text x="170" y="172" font-size="12">NiCrBSi</text>
-              <text x="250" y="172" font-size="12">Inconel</text>
-            </svg>
-            <div class="muted" style="font-size:12px">1000 h 염수분무 (개념치): 0.8 / 1.2 / 1.1 mpy — <b>개념 예시, 실제 데이터 요청 시 제공</b></div>
-          </div>
+<body class="scroll-smooth bg-white text-slate-900">
+    <!-- NAV -->
+    <header class="sticky top-0 z-40 border-b bg-white">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+            <div class="flex items-center gap-3">
+                <div class="h-8 w-8 rounded bg-blue-900"></div>
+                <span class="text-lg font-bold">MGT</span>
+                <span class="text-sm text-gray-500">mgt-p.com</span>
+            </div>
+            <nav class="hidden items-center gap-8 md:flex">
+                <a href="#about" class="text-sm text-gray-600 hover:text-gray-900">About</a>
+                <a href="#products" class="text-sm text-gray-600 hover:text-gray-900">Products</a>
+                <a href="#performance" class="text-sm text-gray-600 hover:text-gray-900">Performance</a>
+                <a href="#cases" class="text-sm text-gray-600 hover:text-gray-900">Cases</a>
+                <a href="#contact" class="text-sm text-gray-600 hover:text-gray-900">Contact</a>
+            </nav>
+            <div class="flex items-center gap-2">
+                <span class="rounded bg-gray-900 px-3 py-1 text-sm text-white">통신</span>
+                <a href="#contact" class="flex items-center gap-2 rounded bg-gray-900 px-4 py-2 text-sm text-white hover:bg-gray-800">
+                    📞 Contact
+                </a>
+            </div>
         </div>
-        <!-- Wear bar -->
-        <div class="card">
-          <div class="head">Wear (G65)</div>
-          <div class="body">
-            <svg viewBox="0 0 360 180" class="chart" role="img" aria-label="Wear volume bars">
-              <rect x="40" y="20" width="1" height="140" fill="#e5e7eb"/>
-              <text x="10" y="18" font-size="12" fill="#475569">mm³</text>
-              <rect x="90" y="80" width="40" height="80" fill="#16a34a"/>
-              <rect x="170" y="60" width="40" height="100" fill="#94a3b8"/>
-              <rect x="250" y="66" width="40" height="94" fill="#cbd5e1"/>
-              <text x="95" y="172" font-size="12">MGT#602</text>
-              <text x="175" y="172" font-size="12">WC-Co</text>
-              <text x="255" y="172" font-size="12">CrC-NiCr</text>
-            </svg>
-            <div class="muted" style="font-size:12px">Proc. A (개념치): 60 / 80 / 75 mm³ — <b>개념 예시</b></div>
-          </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-bg py-20">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="mb-6 flex flex-wrap gap-3">
+                <div class="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm shadow-sm">
+                    🛡️ <span>Corrosion</span>
+                </div>
+                <div class="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm shadow-sm">
+                    ⚙️ <span>Wear</span>
+                </div>
+                <div class="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm shadow-sm">
+                    📊 <span>EMI</span>
+                </div>
+                <div class="flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm shadow-sm">
+                    🔗 <span>Eco</span>
+                </div>
+            </div>
+            <h1 class="mb-6 text-5xl font-bold leading-tight text-gray-900 lg:text-6xl">
+                Advanced<br>
+                Amorphous<br>
+                Powder Solutions
+            </h1>
+            <p class="max-w-2xl text-lg text-gray-600">
+                철계 비정질 분말을 통해 용사·도료·EMI·조선/플랜트 산업에서 새로운 수명주기 성능을 제안합니다.
+            </p>
         </div>
-        <!-- EMI line -->
-        <div class="card">
-          <div class="head">EMI (RL)</div>
-          <div class="body">
-            <svg viewBox="0 0 360 180" class="chart" role="img" aria-label="EMI RL line">
-              <polyline fill="none" stroke="#94a3b8" stroke-width="2" points="30,130 120,120 210,115 300,114"/>
-              <polyline fill="none" stroke="#1E3A8A" stroke-width="2" points="30,120 120,90 210,40 300,55"/>
-              <text x="20" y="20" font-size="12" fill="#475569">RL (dB)</text>
-              <text x="320" y="170" font-size="12" fill="#475569">GHz →</text>
-            </svg>
-            <div class="legend"><span><i style="background:#1E3A8A"></i>MGT#402</span><span><i style="background:#94a3b8"></i>Ferrite/Carbon</span></div>
-            <div class="muted" style="font-size:12px">2–18 GHz (개념치): 최소 RL ≈ -30 dB @10 GHz — <b>예시</b></div>
-          </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="scroll-mt-24 py-20 bg-gray-50">
+        <div class="mx-auto max-w-7xl px-6">
+            <h2 class="mb-2 text-4xl font-bold text-gray-900">About MGT</h2>
+            <p class="mb-6 text-lg text-gray-600">혁신적 소재로 산업 수명을 두 배로.</p>
+            <div class="mb-8 h-1 w-20 bg-blue-900"></div>
+            
+            <p class="mb-8 max-w-4xl text-gray-600">
+                MGT는 독자적 합금 설계와 가스 아토마이징 분말 제조 기술을 기반으로, 내식·내마모·EMI 솔루션을 제공합니다. 조성은 비공개 정책을 준수합니다.
+            </p>
+            
+            <div class="grid gap-6 md:grid-cols-3">
+                <div class="rounded-lg bg-white p-6 shadow-sm">
+                    <h3 class="mb-3 text-lg font-semibold">Mission</h3>
+                    <p class="text-sm text-gray-600">산업 설비의 기대수명과 신뢰성을 향상시키는 비정질 분말 솔루션 제공.</p>
+                </div>
+                <div class="rounded-lg bg-white p-6 shadow-sm">
+                    <h3 class="mb-3 text-lg font-semibold">Differentiation</h3>
+                    <p class="text-sm text-gray-600">비정질 미세조직 기반의 내식/내마모/EMI 동시 최적화, 기존 WC-Co·CrC·Ferrite 대비 LCC 절감.</p>
+                </div>
+                <div class="rounded-lg bg-white p-6 shadow-sm">
+                    <h3 class="mb-3 text-lg font-semibold">Industries</h3>
+                    <p class="text-sm text-gray-600">용사/도료, 조선·플랜트, 전자파 흡수/차폐, 발전·화학 프로세스.</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- POSITIONING (simple scatter) -->
-  <section id="positioning" style="background:var(--bg-alt)">
-    <div class="container">
-      <div class="section-head"><h2>Market Positioning</h2><p>가격 vs 성능 (개념도)</p><div class="divider"></div></div>
-      <div class="card"><div class="body">
-        <svg viewBox="0 0 600 280" class="chart" role="img" aria-label="Positioning scatter">
-          <rect x="40" y="20" width="520" height="200" fill="#fff" stroke="#e5e7eb"/>
-          <!-- competitors -->
-          <circle cx="160" cy="180" r="6" fill="#9ca3af"/><text x="148" y="200" font-size="12">WC-Co</text>
-          <circle cx="220" cy="140" r="6" fill="#9ca3af"/><text x="210" y="160" font-size="12">CrC</text>
-          <circle cx="420" cy="200" r="6" fill="#9ca3af"/><text x="400" y="220" font-size="12">Ferrite/Zn</text>
-          <!-- MGT -->
-          <circle cx="420" cy="120" r="7" fill="#1E3A8A"/><text x="395" y="108" font-size="12" fill="#1E3A8A">MGT#402</text>
-          <circle cx="470" cy="100" r="7" fill="#1E3A8A"/><text x="450" y="92" font-size="12" fill="#1E3A8A">MGT#602</text>
-          <circle cx="460" cy="90" r="7" fill="#1E3A8A"/><text x="445" y="110" font-size="12" fill="#1E3A8A">MGT#502</text>
-          <text x="300" y="250" text-anchor="middle" font-size="12" fill="#475569">Cost →</text>
-          <text x="12" y="120" transform="rotate(-90 12,120)" font-size="12" fill="#475569">Performance ↑</text>
-        </svg>
-        <ul class="muted" style="font-size:14px;line-height:1.8;margin:8px 0 0">
-          <li>WC-Co/CrC 대체 지향</li>
-          <li>Zn-rich Primer / Ferrite 대체 지향</li>
-          <li>LCC 20–40% 절감 목표</li>
-        </ul>
-      </div></div>
-    </div>
-  </section>
+    <!-- PRODUCTS -->
+    <section id="products" class="scroll-mt-24 py-20 bg-white">
+        <div class="mx-auto max-w-7xl px-6">
+            <h2 class="mb-2 text-4xl font-bold text-gray-900">Products</h2>
+            <p class="mb-6 text-lg text-gray-600">Series & Variants</p>
+            <div class="mb-8 h-1 w-20 bg-blue-900"></div>
+            
+            <div class="mb-8 grid gap-6 md:grid-cols-2">
+                <div class="rounded-lg border p-6">
+                    <h3 class="mb-2 text-xl font-semibold">MGT#402</h3>
+                    <p class="text-gray-600">EMI Absorption</p>
+                </div>
+                <div class="rounded-lg border p-6">
+                    <h3 class="mb-2 text-xl font-semibold">MGT#502</h3>
+                    <p class="text-gray-600">Corrosion Resistance</p>
+                </div>
+                <div class="rounded-lg border p-6">
+                    <h3 class="mb-2 text-xl font-semibold">MGT#602</h3>
+                    <p class="text-gray-600">Wear+Corrosion</p>
+                </div>
+                <div class="rounded-lg border p-6">
+                    <h3 class="mb-2 text-xl font-semibold">AST#1-MR</h3>
+                    <p class="text-gray-600">Economic Solution</p>
+                </div>
+            </div>
+            
+            <div class="space-y-3 text-sm text-gray-600">
+                <p><span class="font-medium text-gray-900">MGT#402</span> — 광대역 RL 타깃(8/14 GHz 피크), Ferrite/Carbon 대체 지향, EMI 코팅/잉크.</p>
+                <p><span class="font-medium text-gray-900">MGT#502</span> — 고염소(Cl⁻) 환경 내식 특화, 해양·보일러·플랜트 프라이머 적용.</p>
+                <p><span class="font-medium text-gray-900">MGT#602</span> — 마모+부식 동시 대응, WC-Co/CrC 대비 유지보수 주기 연장.</p>
+                <p><span class="font-medium text-gray-900">AST#1-MR</span> — 비용 최적형, 부품 대량 보수·프라이머 대체 용도.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- CASES (graph-based) -->
-  <section id="cases">
-    <div class="container">
-      <div class="section-head"><h2>Case Studies</h2><p>해양·플랜트·EMI 적용 사례</p><div class="divider"></div></div>
-      <div class="grid three">
-        <div class="card"><div class="head">Marine</div><div class="body">
-          <svg viewBox="0 0 360 180" class="chart">
-            <rect x="90" y="60" width="40" height="100" fill="#1E3A8A"/>
-            <rect x="190" y="100" width="40" height="60" fill="#cbd5e1"/>
-            <text x="90" y="172" font-size="12">Before</text>
-            <text x="190" y="172" font-size="12">After</text>
-          </svg>
-          <div class="muted" style="font-size:12px">B117 1000 h: 부식율 약 60% 감소 (개념치)</div>
-        </div></div>
-        <div class="card"><div class="head">Plant</div><div class="body">
-          <svg viewBox="0 0 360 180" class="chart">
-            <rect x="90" y="40" width="40" height="120" fill="#94a3b8"/>
-            <rect x="190" y="80" width="40" height="80" fill="#1E3A8A"/>
-            <text x="90" y="172" font-size="12">Before</text>
-            <text x="190" y="172" font-size="12">After</text>
-          </svg>
-          <div class="muted" style="font-size:12px">G65: 마모량 약 50% 감소 (개념치)</div>
-        </div></div>
-        <div class="card"><div class="head">EMI</div><div class="body">
-          <svg viewBox="0 0 360 180" class="chart">
-            <polyline fill="none" stroke="#94a3b8" stroke-width="2" points="30,130 120,120 210,115 300,114"/>
-            <polyline fill="none" stroke="#1E3A8A" stroke-width="2" points="30,120 120,90 210,40 300,55"/>
-            <text x="320" y="170" font-size="12" fill="#475569">GHz →</text>
-          </svg>
-          <div class="muted" style="font-size:12px">10–14 GHz: RL 개선 ≥ 20 dB (개념치)</div>
-        </div></div>
-      </div>
-    </div>
-  </section>
+    <!-- PERFORMANCE -->
+    <section id="performance" class="scroll-mt-24 py-20 bg-gray-50">
+        <div class="mx-auto max-w-7xl px-6">
+            <h2 class="mb-2 text-4xl font-bold text-gray-900">Performance Snapshot</h2>
+            <p class="mb-6 text-lg text-gray-600">단순화된 시각 자료 (정량 데이터는 요청 시 제공)</p>
+            <div class="mb-8 h-1 w-20 bg-blue-900"></div>
+            
+            <div class="grid gap-8 lg:grid-cols-3">
+                <div class="rounded-lg bg-white p-6 shadow-sm">
+                    <h3 class="mb-4 text-xl font-semibold">Corrosion (B117)</h3>
+                    <div class="chart-container">
+                        <canvas id="corrosionChart"></canvas>
+                    </div>
+                    <p class="mt-4 text-xs text-gray-500">
+                        1000 h 염수분무 (개념치, 예시용): MGT#502 = 0.8 mpy, NiCrBSi = 1.2, Inconel = 1.1 → 
+                        <span class="font-medium">NiCrBSi 대비 약 33%↓, Inconel 대비 약 27%↓</span>. 
+                        <em>Conceptual values, illustrative only.</em>
+                    </p>
+                </div>
+                
+                <div class="rounded-lg bg-white p-6 shadow-sm">
+                    <h3 class="mb-4 text-xl font-semibold">Wear (G65)</h3>
+                    <div class="chart-container">
+                        <canvas id="wearChart"></canvas>
+                    </div>
+                    <p class="mt-4 text-xs text-gray-500">
+                        절삭마모(Proc. A, 개념치): MGT#602 = 60 mm³, WC-Co = 80, CrC-NiCr = 75 → 
+                        <span class="font-medium">WC-Co 대비 25%↓, CrC 대비 20%↓</span>. 
+                        <em>Conceptual values, illustrative only.</em>
+                    </p>
+                </div>
+                
+                <div class="rounded-lg bg-white p-6 shadow-sm">
+                    <h3 class="mb-4 text-xl font-semibold">EMI (RL)</h3>
+                    <div class="chart-container">
+                        <canvas id="emiChart"></canvas>
+                    </div>
+                    <p class="mt-4 text-xs text-gray-500">
+                        2–18 GHz (개념치): <span class="font-medium">MGT#402 최소 RL ≈ -30 dB @10 GHz</span>, 
+                        8/14 GHz 부근 피크 설계. <em>Conceptual values, illustrative only.</em>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- CONTACT -->
-  <section id="contact" style="background:var(--bg-alt)">
-    <div class="container">
-      <div class="section-head"><h2>Contact & Download</h2><p>문의 주시면 산업별 표준 사양·시험 데이터 요약 제공</p><div class="divider"></div></div>
-      <div class="grid two">
-        <div class="card"><div class="head">Contact</div><div class="body">
-          <div>📧 sales@mgt-p.com</div>
-          <div style="margin-top:6px">📞 +82-00-0000-0000</div>
-          <div style="margin-top:12px"><a class="btn primary" href="mailto:sales@mgt-p.com">Email us</a></div>
-        </div></div>
-        <div class="card"><div class="head">Download Center</div><div class="body">
-          <a class="btn" href="#">📄 Catalog (PDF)</a>
-          <a class="btn" href="#" style="margin-left:8px">🧾 Product Brochure</a>
-          <div style="margin-top:10px" class="muted" style="font-size:12px">Conceptual values — 실제 시험 데이터는 요청 시 제공됩니다.</div>
-        </div></div>
-      </div>
-    </div>
-  </section>
+    <!-- MARKET POSITIONING -->
+    <section class="scroll-mt-24 py-20 bg-white">
+        <div class="mx-auto max-w-7xl px-6">
+            <h2 class="mb-2 text-4xl font-bold text-gray-900">Market Positioning</h2>
+            <p class="mb-6 text-lg text-gray-600">가격 vs 성능 포지셔닝 (개념도)</p>
+            <div class="mb-8 h-1 w-20 bg-blue-900"></div>
+            
+            <div class="rounded-lg bg-white p-6 shadow-sm">
+                <div class="chart-container" style="height: 400px;">
+                    <canvas id="positioningChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="mt-6 space-y-2">
+                <p class="flex items-center gap-2 text-sm text-gray-600">▶ WC-Co/CrC 대체 지향</p>
+                <p class="flex items-center gap-2 text-sm text-gray-600">▶ Zn-rich Primer / Ferrite 대체 지향</p>
+                <p class="flex items-center gap-2 text-sm text-gray-600">▶ LCC 20–40% 절감 목표</p>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    © <span id="y"></span> MGT — mgt-p.com · All rights reserved.
-  </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+    <!-- CASE STUDIES -->
+    <section id="cases" class="scroll-mt-24 py-20 bg-gray-50">
+        <div class="mx-auto max-w-7xl px-6">
+            <h2 class="mb-2 text-4xl font-bold text-gray-900">Case Studies</h2>
+            <p class="mb-6 text-lg text-gray-600">해양·플랜트·EMI 적용 사례</p>
+            <div class="mb-8 h-1 w-20 bg-blue-900"></div>
+            
+            <div class="grid gap-8 lg:grid-cols-3">
+                <div class="rounded-lg bg-white p-6 shadow-sm">
+                    <h3 class="mb-4 text-xl font-semibold">Marine</h3>
+                    <div class="chart-container">
+                        <canvas id="marineChart"></canvas>
+                    </div>
+                    <p class="mt-4 text-xs text-gray-500">
+                        B117 1000 h 기준, <span class="font-medium">부식율 약 60% 감소</span> (개념치).
+                    </p>
+                </div>
+                
+                <div class="rounded-lg bg-white p-6 shadow-sm">
+                    <h3 class="mb-4 text-xl font-semibold">Plant</h3>
+                    <div class="chart-container">
+                        <canvas id="plantChart"></canvas>
+                    </div>
+                    <p class="mt-4 text-xs text-gray-500">
+                        G65 기준, <span class="font-medium">마모량 약 50% 감소</span>로 유지보수 주기 연장.
+                    </p>
+                </div>
+                
+                <div class="rounded-lg bg-white p-6 shadow-sm">
+                    <h3 class="mb-4 text-xl font-semibold">EMI</h3>
+                    <div class="chart-container">
+                        <canvas id="emiCaseChart"></canvas>
+                    </div>
+                    <p class="mt-4 text-xs text-gray-500">
+                        10–14 GHz 구간에서 <span class="font-medium">RL 개선 폭 ≥ 20 dB</span> (개념치).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="scroll-mt-24 py-20 bg-white">
+        <div class="mx-auto max-w-7xl px-6">
+            <h2 class="mb-2 text-4xl font-bold text-gray-900">Contact & Download</h2>
+            <p class="mb-6 text-lg text-gray-600">문의 주시면 산업별 표준 사양·시험 데이터 요약 제공</p>
+            <div class="mb-8 h-1 w-20 bg-blue-900"></div>
+            
+            <div class="grid gap-8 md:grid-cols-2">
+                <div class="rounded-lg bg-gray-50 p-6">
+                    <h3 class="mb-4 text-xl font-semibold">Contact</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center gap-2">📧 sales@mgt-p.com</div>
+                        <div class="flex items-center gap-2">📞 +82-00-0000-0000</div>
+                        <a href="mailto:sales@mgt-p.com" class="mt-4 flex w-full items-center justify-center rounded-md bg-blue-900 px-4 py-2 text-sm font-medium text-white hover:bg-blue-800">
+                            📧 Email us
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="rounded-lg bg-gray-50 p-6">
+                    <h3 class="mb-4 text-xl font-semibold">Download Center</h3>
+                    <div class="space-y-3 text-sm">
+                        <a href="#" class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50">
+                            📥 Catalog (PDF)
+                        </a>
+                        <p class="text-xs text-gray-500">제품 라인업 요약, 적용 산업, 기본 성능 지표.</p>
+                        
+                        <a href="#" class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50">
+                            📄 Product Brochure
+                        </a>
+                        <p class="text-xs text-gray-500">시리즈별 장점/경쟁재 비교, 적용 가이드(개념).</p>
+                        
+                        <a href="#" class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50">
+                            📊 Data Sheet (Summary)
+                        </a>
+                        <p class="text-xs text-gray-500">시험 프로토콜, 단순화된 수치, 라벨/해석 가이드.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t py-10 text-center text-xs text-gray-500">
+        © 2025 MGT — mgt-p.com · All rights reserved.
+    </footer>
+
+    <script>
+        // Chart defaults
+        Chart.defaults.font.family = 'Inter';
+        Chart.defaults.font.size = 11;
+        Chart.defaults.responsive = true;
+        Chart.defaults.maintainAspectRatio = false;
+
+        // Corrosion Chart
+        new Chart(document.getElementById('corrosionChart'), {
+            type: 'bar',
+            data: {
+                labels: ['MGT#502', 'NiCrBSi', 'Inconel'],
+                datasets: [{
+                    data: [0.8, 1.2, 1.1],
+                    backgroundColor: ['#1e3a8a', '#3b82f6', '#60a5fa']
+                }]
+            },
+            options: {
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { 
+                        beginAtZero: true,
+                        max: 1.4,
+                        ticks: { stepSize: 0.3 }
+                    }
+                }
+            }
+        });
+
+        // Wear Chart
+        new Chart(document.getElementById('wearChart'), {
+            type: 'bar',
+            data: {
+                labels: ['MGT#602', 'WC-Co', 'CrC-NiCr'],
+                datasets: [{
+                    data: [60, 80, 75],
+                    backgroundColor: ['#16a34a', '#22c55e', '#4ade80']
+                }]
+            },
+            options: {
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { 
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: { stepSize: 20 }
+                    }
+                }
+            }
+        });
+
+        // EMI Chart
+        new Chart(document.getElementById('emiChart'), {
+            type: 'line',
+            data: {
+                labels: [2, 6, 10, 14, 18],
+                datasets: [{
+                    label: 'MGT402',
+                    data: [-8, -18, -30, -28, -15],
+                    borderColor: '#1e3a8a',
+                    backgroundColor: '#1e3a8a',
+                    fill: false,
+                    tension: 0.3
+                }, {
+                    label: 'Ferrite',
+                    data: [-3, -5, -6, -7, -5],
+                    borderColor: '#ef4444',
+                    backgroundColor: '#ef4444',
+                    fill: false,
+                    tension: 0.3
+                }, {
+                    label: 'Carbon',
+                    data: [-4, -6, -6, -6, -5],
+                    borderColor: '#6b7280',
+                    backgroundColor: '#6b7280',
+                    fill: false,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                scales: {
+                    x: { title: { display: true, text: 'GHz' } },
+                    y: { 
+                        title: { display: true, text: 'RL (dB)' },
+                        min: -35,
+                        max: 0
+                    }
+                }
+            }
+        });
+
+        // Positioning Scatter Chart
+        new Chart(document.getElementById('positioningChart'), {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Competitors',
+                    data: [
+                        {x: 2, y: 3, label: 'WC-Co'},
+                        {x: 3, y: 4, label: 'CrC'},
+                        {x: 4, y: 2, label: 'Ferrite/Zn'}
+                    ],
+                    backgroundColor: '#9ca3af',
+                    pointRadius: 6
+                }, {
+                    label: 'MGT Products',
+                    data: [
+                        {x: 4.5, y: 4.5, label: 'MGT#402'},
+                        {x: 4.7, y: 4.6, label: 'MGT#502'},
+                        {x: 4.8, y: 4.7, label: 'MGT#602'}
+                    ],
+                    backgroundColor: '#1e3a8a',
+                    pointRadius: 8
+                }]
+            },
+            options: {
+                scales: {
+                    x: { 
+                        title: { display: true, text: 'Cost →' },
+                        min: 1,
+                        max: 5
+                    },
+                    y: { 
+                        title: { display: true, text: 'Performance →' },
+                        min: 1,
+                        max: 5
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.raw.label || '';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Marine Case Chart
+        new Chart(document.getElementById('marineChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Before', 'After'],
+                datasets: [{
+                    data: [1.6, 0.6],
+                    backgroundColor: ['#6b7280', '#1e3a8a']
+                }]
+            },
+            options: {
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { 
+                        beginAtZero: true,
+                        max: 2
+                    }
+                }
+            }
+        });
+
+        // Plant Case Chart
+        new Chart(document.getElementById('plantChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Before', 'After'],
+                datasets: [{
+                    data: [120, 60],
+                    backgroundColor: ['#6b7280', '#16a34a']
+                }]
+            },
+            options: {
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { 
+                        beginAtZero: true,
+                        max: 150
+                    }
+                }
+            }
+        });
+
+        // EMI Case Chart
+        new Chart(document.getElementById('emiCaseChart'), {
+            type: 'line',
+            data: {
+                labels: [10, 14],
+                datasets: [{
+                    label: 'Before',
+                    data: [-6, -8],
+                    borderColor: '#9ca3af',
+                    backgroundColor: '#9ca3af',
+                    fill: false,
+                    tension: 0.1
+                }, {
+                    label: 'After',
+                    data: [-30, -28],
+                    borderColor: '#1e3a8a',
+                    backgroundColor: '#1e3a8a',
+                    fill: false,
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    x: { title: { display: true, text: 'GHz' } },
+                    y: { 
+                        title: { display: true, text: 'RL (dB)' },
+                        min: -35,
+                        max: 0
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
