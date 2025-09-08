@@ -325,6 +325,16 @@
         .scroll-target {
             scroll-margin-top: 96px;
         }
+        
+        /* Mobile responsive */
+        @media (max-width: 767px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            .section-title {
+                font-size: 28px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -376,7 +386,7 @@
             </div>
             
             <p style="margin-bottom: 32px; color: #64748b; max-width: 800px;">
-                MGT는 독자적 합금 설계와 가스 아토마이징 분말 제조 기술을 기반으로, 내식·내마모·EMI 솔루션을 제공합니다. 조성은 특허등록이 완료될때까지 비공개 입니다.
+                MGT는 독자적 합금 설계와 가스 아토마이징 분말 제조 기술을 기반으로, 내식·내마모·EMI 솔루션을 제공합니다. 조성은 비공개 정책을 준수합니다.
             </p>
             
             <div class="grid grid-3">
@@ -561,7 +571,8 @@
                     <h3>Contact</h3>
                     <div class="contact-info">
                         <div>📧 sales@mgt-p.com</div>
-                        <div>📞 +82-55-743-5550</div>
+                        <div>📞 055-743-5550</div>
+                        <div>📍 경상남도 진주시 진의로 688-7</div>
                     </div>
                     <a href="mailto:sales@mgt-p.com" class="btn btn-primary" style="width: 100%; justify-content: center;">
                         📧 Email us
@@ -695,7 +706,7 @@
             });
 
             // Positioning Scatter Chart
-            new Chart(document.getElementById('positioningChart'), {
+            const positioningChart = new Chart(document.getElementById('positioningChart'), {
                 type: 'scatter',
                 data: {
                     datasets: [{
@@ -732,6 +743,9 @@
                         }
                     },
                     plugins: {
+                        legend: {
+                            display: false
+                        },
                         tooltip: {
                             callbacks: {
                                 label: function(context) {
@@ -740,7 +754,24 @@
                             }
                         }
                     }
-                }
+                },
+                plugins: [{
+                    afterDraw: function(chart) {
+                        const ctx = chart.ctx;
+                        chart.data.datasets.forEach((dataset, datasetIndex) => {
+                            const meta = chart.getDatasetMeta(datasetIndex);
+                            meta.data.forEach((point, index) => {
+                                const data = dataset.data[index];
+                                if (data.label) {
+                                    ctx.fillStyle = datasetIndex === 0 ? '#374151' : '#1e3a8a';
+                                    ctx.font = 'bold 11px system-ui';
+                                    ctx.textAlign = 'center';
+                                    ctx.fillText(data.label, point.x, point.y - 15);
+                                }
+                            });
+                        });
+                    }
+                }]
             });
 
             // Marine Case Chart
